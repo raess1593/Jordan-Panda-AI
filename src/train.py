@@ -14,8 +14,10 @@ def train():
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])
 
-    root_path = Path(__file__).parent.parent / "data" / "processed"
-    full_dataset = JordanPandaDataset(root_dir=root_path, transform=transform)
+    print("Composing dataset...")
+    root_path = Path(__file__).parent.parent
+    dataset_dir = root_path / "data" / "processed"
+    full_dataset = JordanPandaDataset(root_dir=dataset_dir, transform=transform)
     
     train_size = int(len(full_dataset)*0.8)
     test_size = len(full_dataset) - train_size
@@ -25,6 +27,7 @@ def train():
     train_loader = DataLoader(dataset=train_dataset, batch_size=32, shuffle=True)
     test_loader = DataLoader(dataset=test_dataset, batch_size=16, shuffle=False)
 
+    print("Preparing model...")
     model = JordanPandaModel()
     criterion = nn.CrossEntropyLoss()
     optimizer = torch.optim.Adam(params=model.parameters(), lr=0.001)
@@ -33,7 +36,7 @@ def train():
     model.to(device)
 
     model.train()
-    epochs = 20
+    epochs = 15
     losses = []
     for e in range(epochs):
         running_loss = 0
@@ -68,7 +71,17 @@ def train():
         
         accuracy = successes / total * 100
         print(f"--> Accuracy: {accuracy}%")
-            
+
+    models_dir = root_path / "models"
+    models_dir.mkdir(parents=True, exist_ok=True) # Crear carpeta si no existe
+
+    x = 1
+    while (models_dir / f"jordan_panda_model_{x}.pth").exists():
+        x += 1
+    
+    final_path = models_dir / f"jordan_panda_model_{x}.pth"
+    
+    torch.save(model.state_dict(), final_path)        
 
 if __name__ == "__main__":
     train()
