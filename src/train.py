@@ -7,7 +7,7 @@ from torchvision import transforms
 from model import JordanPandaModel
 from data_processing.dataset import JordanPandaDataset 
 
-def main():
+def train():
     transform = transforms.Compose([
         transforms.Resize((224, 224)),
         transforms.ToTensor(),
@@ -71,4 +71,4 @@ def main():
             
 
 if __name__ == "__main__":
-    main()
+    train()
