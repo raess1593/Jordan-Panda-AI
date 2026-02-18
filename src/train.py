@@ -30,13 +30,13 @@ def train():
     print("Preparing model...")
     model = JordanPandaModel()
     criterion = nn.CrossEntropyLoss()
-    optimizer = torch.optim.Adam(params=model.parameters(), lr=0.001)
+    optimizer = torch.optim.Adam(params=model.parameters(), lr=0.0001)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
 
     model.train()
-    epochs = 15
+    epochs = 12
     losses = []
     for e in range(epochs):
         running_loss = 0
