@@ -32,7 +32,7 @@ def run_augmentation():
     augmenter.multiply(
         root_path / "data" / "raw" / "jordan_panda",
         root_path / "data" / "processed" / "jordan_panda", 
-        multiplier=20
+        multiplier=5
         )
     augmenter.multiply(
         root_path / "data" / "raw" / "not_jordan_panda",
