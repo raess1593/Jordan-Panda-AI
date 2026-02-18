@@ -1,6 +1,6 @@
-# 🐼 Panda-Scout AI: End-to-End Sneaker Classifier
+# 🐼 Jordan-Panda-AI: End-to-End Sneaker Classifier
 
-**Panda-Scout AI** is a professional-grade Data Engineering and Computer Vision project designed to automate the detection of **Nike Jordan 1 "Panda"** sneakers in secondary markets. This project serves as a comprehensive proof-of-concept for high-scale data acquisition and deep learning inference.
+**Jordan-Panda-AI** is a professional-grade Data Engineering and Computer Vision project designed to automate the detection of **Nike Jordan 1 "Panda"** sneakers in secondary markets. This project serves as a comprehensive proof-of-concept for high-scale data acquisition and deep learning inference.
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
@@ -22,8 +22,8 @@ The system automates the entire machine learning lifecycle:
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/Panda-Scout-AI.git](https://github.com/YOUR_USERNAME/Panda-Scout-AI.git)
-   cd Panda-Scout-AI
+   git clone [https://github.com/YOUR_USERNAME/Jordan-Panda-AI.git](https://github.com/YOUR_USERNAME/Jordan-Panda-AI.git)
+   cd Jordan-Panda-AI
 2. **Create a virtual environment:**
    ```bash
    python -m venv venv
