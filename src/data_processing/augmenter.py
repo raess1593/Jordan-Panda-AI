@@ -13,7 +13,7 @@ class ImgAumenter:
             transforms.RandomResizedCrop(size=(224, 224), scale=(0.7, 1.0))
         ])
     
-    def multiply(self, input_path, output_path, multiplier=10):
+    def multiply(self, input_path, output_path, multiplier=5):
         counter = 0
         for img_path in input_path.iterdir():
             if img_path.suffix.lower() in [".jpg", ".png", ".jpeg"]:
@@ -26,17 +26,17 @@ class ImgAumenter:
                 print(f"AUGMENTED: {counter}")
     
 def run_augmentation():
-    base_dir = Path(__file__).parent.parent.parent
+    root_path = Path(__file__).parent.parent.parent
     augmenter = ImgAumenter()
     augmenter.multiply(
-        base_dir / "data" / "raw" / "jordan_panda",
-        base_dir / "data" / "processed" / "jordan_panda", 
+        root_path / "data" / "raw" / "jordan_panda",
+        root_path / "data" / "processed" / "jordan_panda", 
         multiplier=20
         )
     augmenter.multiply(
-        base_dir / "data" / "raw" / "not_jordan_panda",
-        base_dir / "data" / "processed" / "not_jordan_panda", 
-        multiplier=20
+        root_path / "data" / "raw" / "not_jordan_panda",
+        root_path / "data" / "processed" / "not_jordan_panda", 
+        multiplier=5
         )
 
 if __name__ == "__main__":
