@@ -23,6 +23,7 @@ class ImgAumenter:
                     augmented_img = self.transform_pipeline(img)
                     new_name = f"aug_{i}_{img_path.stem}.jpg"
                     augmented_img.save(output_path / new_name)
+                counter += multiplier
                 print(f"AUGMENTED: {counter}")
     
 def run_augmentation():
