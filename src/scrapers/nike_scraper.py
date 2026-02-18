@@ -101,7 +101,7 @@ class TrainingScraper:
         except:
             print("Driver is already closed")
 
-def nike_scrap():
+if __name__ == "__main__":
     url = "https://www.nike.com/w/4g797z90poy?q=jordan%20panda"
     scraper = TrainingScraper(url)
 
