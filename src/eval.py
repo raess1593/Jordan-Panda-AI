@@ -15,6 +15,7 @@ while i < 5:
     if model_file.exists():
         break
 data_path = root_path / "data" / "evaluation"
+data_path.mkdir(parents=True, exist_ok=True)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = JordanPandaModel()

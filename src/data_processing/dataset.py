@@ -12,6 +12,7 @@ class JordanPandaDataset(Dataset):
 
         for label, category in enumerate(["not_jordan_panda", "jordan_panda"]):
             current_dir = self.root_dir / category
+            current_dir.mkdir(parents=True, exist_ok=True)
             for img_name in current_dir.iterdir():
                 self.image_paths.append(current_dir / img_name)
                 self.image_labels.append(label)

@@ -73,7 +73,7 @@ def train():
         print(f"--> Accuracy: {accuracy}%")
 
     models_dir = root_path / "models"
-    models_dir.mkdir(parents=True, exist_ok=True) # Crear carpeta si no existe
+    models_dir.mkdir(parents=True, exist_ok=True)
 
     x = 1
     while (models_dir / f"jordan_panda_model_{x}.pth").exists():

@@ -14,6 +14,8 @@ class ImgAumenter:
         ])
     
     def multiply(self, input_path, output_path, multiplier=5):
+        input_path.mkdir(parents=True, exist_ok=True)
+        output_path.mkdir(parents=True, exist_ok=True)
         counter = 0
         for img_path in input_path.iterdir():
             if img_path.suffix.lower() in [".jpg", ".png", ".jpeg"]:
